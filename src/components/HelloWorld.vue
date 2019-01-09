@@ -1,8 +1,7 @@
 <template>
   <div>
-
      <button v-on:click='getPics()'>Click me</button>
-     <div class='results'>{{results}}</div>        
+     <div class='results' v-if='results' v-for='result of results'>{{result.picture}}</div>        
   </div>
 </template>
 
@@ -42,9 +41,7 @@ export default {
       //     console.log(error)
       //   })
         console.log(mockMonthData, this.currentDate)
-        this.results = mockMonthData.map(day => {
-          day.picture
-        })
+        this.results = mockMonthData
     }
   }
 }
