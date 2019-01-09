@@ -5,9 +5,10 @@
       <button v-on:click='getAllPics()'>Get All Pictures</button>
     </section>
     <section class='image-container'>
-       <img class='current-picture' :src='this.currentDatePicture.picture' />
+
+       <img class='current-picture' v-if='currentDatePicture' :src='this.currentDatePicture.url' />
        <div class='pictures'>
-        <img class='picture' v-bind:class='{}'v-if='showAllPictures' v-for='result in results' :value='result.date' :src='result.picture' />
+        <img class='picture' v-bind:class='{}' v-if='showAllPictures' v-for='result in results' :value='result.date' :src='result.url' />
        </div>
     </section>
   </main>
@@ -16,7 +17,8 @@
 <script>
 import axios from 'axios';
 import { mockMonthData } from '../mockData/mockData';
-const moment = require('moment')
+const moment = require('moment');
+import { apiKey } from '../key.js';
 
 export default {
   name: 'HelloWorld',
@@ -26,7 +28,8 @@ export default {
       results: '',
       currentDatePicture: '',
       showAllPictures: '',
-      currentDate: ''
+      currentDate: '',
+      currentMonth: ''
     }
   },
     mounted() {
@@ -37,8 +40,10 @@ export default {
   methods: {
     getDate() {
       const currentDate = Date.now()
-      const dateString = moment(currentDate).format('YYYY-DD-MM')
+      const dateString = moment(currentDate).format('YYYY-MM-DD')
       this.currentDate = dateString
+      const currentMonth = moment(currentDate).format('YYYY-MM')
+      this.currentMonth = currentMonth + '-01'
     },
 
     getCurrentDayPicture() {
@@ -56,17 +61,18 @@ export default {
     },
 
     getPics() {
-
-      // axios.get(mockMonthData)
+      // axios.get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&start_date=${this.currentMonth}`)
       //   .then((response) => {
-      //     console.log(response)
-      //     // this.results = response.data.collection.items;
+      //     console.log('kkklll', response.data)
+      //     this.results = response.data;
+      //     this.currentDayPicture = response.data.slice(-1)[0];
       //   })
       //   .catch((error) => {
       //     console.log(error)
       //   })
-        console.log(mockMonthData, this.currentDate)
-        this.results = mockMonthData
+
+      
+
     }
   }
 }
@@ -80,17 +86,28 @@ export default {
   }
 
   button {
-
+    background-color: black;
+    color: white;
+    height: 40px;
+    font-size: 15px;
+    margin-bottom: 30px;
   }
 
   .current-picture {
     border: none;
     height: 20rem;
-    width: 20rem;
+    width: 25rem;
   }
 
   .pictures {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .picture {
+    padding-bottom: 30px;
+    height: 20rem;
+    width: 25rem;
   }
 </style>
