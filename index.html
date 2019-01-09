@@ -3,10 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>nasa-pictures</title>
+    <title>Nasa Pictures</title>
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+    <script src='vue.js'></script>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+    	<div class='results' v-if='results' v-for='result for results'>{{result.picture}}</div>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>
