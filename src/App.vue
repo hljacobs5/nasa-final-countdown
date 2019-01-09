@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <h1>Nasa Pictures</h1>
+    <h1>Explore the Cosmos</h1>
+    <p class='description'>Click either button to see daily pictures of our solar system.</p>
     <HelloWorld/>
   </div>
 </template>
@@ -31,6 +32,11 @@ body {
 
 h1 {
   color: black;
-  font-size: 50px;
+  font-size: 60px;
 }
+
+.description {
+  font-size: 30px;
+}
+
 </style>

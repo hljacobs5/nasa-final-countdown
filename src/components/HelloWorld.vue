@@ -94,9 +94,8 @@ export default {
     background-color: grey;
     color: white;
     height: 40px;
-    font-size: 15px;
+    font-size: 25px;
     margin-bottom: 30px;
-    border: none;
     cursor: pointer;
   }
 
