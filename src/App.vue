@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Nasa Pictures</h1>
     <HelloWorld/>
   </div>
 </template>
@@ -23,7 +24,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  background-color: black;
-  height: 100vh;
+}
+
+h1 {
+  color: black;
 }
 </style>

@@ -5,9 +5,10 @@
       <button v-on:click='getAllPics()'>Get All Pictures</button>
     </section>
     <section class='image-container'>
-       <img class='current-picture' :src='this.currentDatePicture.picture' />
+
+       <img class='current-picture' v-if='currentDatePicture' :src='this.currentDatePicture.picture' />
        <div class='pictures'>
-        <img class='picture' v-bind:class='{}'v-if='showAllPictures' v-for='result in results' :value='result.date' :src='result.picture' />
+        <img class='picture' v-bind:class='{}' v-if='showAllPictures' v-for='result in results' :value='result.date' :src='result.picture' />
        </div>
     </section>
   </main>
@@ -84,13 +85,21 @@ export default {
   }
 
   .current-picture {
+    padding-top: 30px;
     border: none;
     height: 20rem;
-    width: 20rem;
+    width: 25rem;
   }
 
   .pictures {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .picture {
+    padding-bottom: 30px;
+    height: 20rem;
+    width: 25rem;
   }
 </style>
