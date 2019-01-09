@@ -28,4 +28,4 @@ A final take-home challenge from Turing where we were given a spec and expected 
 ![alt text](https://github.com/hljacobs5/nasa-final-countdown/blob/master/Screen%20Shot%202019-01-09%20at%2011.16.56%20AM.png)
 
 ## Future Iterations
-* Add search funcionality so a user can search for a picture from specific date in YYYY-DD-MM format.
+* Add search functionality so a user can search for a picture from specific date in YYYY-DD-MM format.
