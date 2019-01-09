@@ -42,7 +42,9 @@ export default {
       //     console.log(error)
       //   })
         console.log(mockMonthData, this.currentDate)
-        this.results = mockMonthData
+        this.results = mockMonthData.map(day => {
+          day.picture
+        })
     }
   }
 }
