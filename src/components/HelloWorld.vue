@@ -1,8 +1,8 @@
 <template>
   <main>
     <section class='btn-container'>
-      <button v-on:click='getCurrentDayPicture()'>Today's Picture</button>
-      <button v-on:click='getAllPics()'>Get All Month's Pictures</button>
+      <button v-on:click='getCurrentDayPicture()'>Today's Photo</button>
+      <button v-on:click='getAllPics()'>Collection of Current Month's Photos</button>
     </section>
     <section class='image-container'>
        <img class='current-picture' v-if='currentDatePicture' :src='this.currentDatePicture.url' />
@@ -91,18 +91,21 @@ export default {
   }
 
   button {
-    background-color: grey;
-    color: white;
+    background-color: #FFFFFF;
+    color: #71298F;
     height: 40px;
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 30px;
     cursor: pointer;
+    border-radius: 12px;
   }
 
   .current-picture {
     border: none;
-    height: 20rem;
-    width: 25rem;
+    height: 30rem;
+    width: 35rem;
+    border-radius: 8px;
+    border: 1.5px solid #FFFFFF;
   }
 
   .pictures {
@@ -112,13 +115,15 @@ export default {
   }
 
   .picture {
-    padding-bottom: 30px;
     height: 20rem;
     width: 25rem;
+    border-radius: 8px;
+    border: 1.5px solid #FFFFFF;
   }
 
   .labels {
     display: flex;
-     flex-direction: column;
+    flex-direction: column;
+    color: #FFFFFF;
   }
 </style>

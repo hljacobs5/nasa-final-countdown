@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Explore the Cosmos</h1>
-    <p class='description'>Click either button to see daily pictures of our solar system.</p>
+    <p class='description'>Click either button to see daily photos of our solar system.</p>
     <HelloWorld/>
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {
 
 <style>
 body {
-  background-color: gray;
+  background-color: #19042A;
 }
 
 #app {
@@ -31,12 +31,14 @@ body {
 }
 
 h1 {
-  color: black;
+  color: #FFFFFF;
   font-size: 60px;
 }
 
 .description {
   font-size: 30px;
+  color: #71298F;
+
 }
 
 </style>
