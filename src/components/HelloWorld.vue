@@ -1,7 +1,11 @@
 <template>
   <div>
      <button v-on:click='getCurrentDayPicture()'>Today's Picture</button>
+     <button v-on:click='getAllPics()'>Get All Pictures</button>
      <img :src='this.currentDatePicture.picture' />
+     <div class='pictures'>
+      <img v-if='showAllPictures' v-for='result in results' :value='result.date' :src='result.picture' />
+     </div>
 
   </div>
 </template>
@@ -18,6 +22,7 @@ export default {
       query: '',
       results: '',
       currentDatePicture: '',
+      showAllPictures: '',
       currentDate: ''
     }
   },
@@ -34,12 +39,17 @@ export default {
     },
 
     getCurrentDayPicture() {
-      console.log('hit')
+      this.showAllPictures = '';
       this.results.forEach(result => {
         if (result.date === this.currentDate) {
           this.currentDatePicture = result
         }
       })
+    },
+
+    getAllPics() {
+      this.currentDatePicture = '';
+      this.showAllPictures = this.results;
     },
 
     getPics() {
