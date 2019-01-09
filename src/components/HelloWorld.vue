@@ -2,7 +2,7 @@
   <div>
      <button v-on:click='getCurrentDayPicture()'>Today's Picture</button>
      <button v-on:click='getAllPics()'>Get All Pictures</button>
-     <img :src='this.currentDatePicture.picture' />
+     <img class='current-picture' :src='this.currentDatePicture.picture' />
      <div class='pictures'>
       <img v-if='showAllPictures' v-for='result in results' :value='result.date' :src='result.picture' />
      </div>
@@ -71,5 +71,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .current-picture {
 
+  }
+
+  .pictures {
+    display: flex;
+    flex-wrap: wrap;
+  }
 </style>
