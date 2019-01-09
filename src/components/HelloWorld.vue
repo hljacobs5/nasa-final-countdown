@@ -81,11 +81,14 @@ export default {
   }
 
   button {
-
+    background-color: black;
+    color: white;
+    height: 40px;
+    font-size: 15px;
+    margin-bottom: 30px;
   }
 
   .current-picture {
-    padding-top: 30px;
     border: none;
     height: 20rem;
     width: 25rem;

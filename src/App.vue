@@ -28,5 +28,6 @@ export default {
 
 h1 {
   color: black;
+  font-size: 50px;
 }
 </style>
