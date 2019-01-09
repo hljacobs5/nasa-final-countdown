@@ -15,10 +15,15 @@ A final take-home challenge from Turing where we were given a spec and expected 
 * npm run build
 
 ## Final Product
+### Front Page
 
 ![alt text](https://github.com/hljacobs5/nasa-final-countdown/blob/master/Screen%20Shot%202019-01-09%20at%2011.16.23%20AM.png)
 
+### Current Day View
+
 ![alt text](https://github.com/hljacobs5/nasa-final-countdown/blob/master/Screen%20Shot%202019-01-09%20at%2011.16.44%20AM.png)
+
+### Photo Collection View
 
 ![alt text](https://github.com/hljacobs5/nasa-final-countdown/blob/master/Screen%20Shot%202019-01-09%20at%2011.16.56%20AM.png)
 
