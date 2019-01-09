@@ -1,7 +1,8 @@
 <template>
   <div>
-     <button v-on:click='getPics()'>Click me</button>
-     <div class='results' v-if='results' v-for='result of results'>{{result.picture}}</div>        
+     <button v-on:click='getCurrentDayPicture()'>Today's Picture</button>
+     <img :src='this.currentDatePicture.picture' />
+
   </div>
 </template>
 
@@ -16,11 +17,13 @@ export default {
     return {
       query: '',
       results: '',
+      currentDatePicture: '',
       currentDate: ''
     }
   },
     mounted() {
       this.getDate()
+      this.getPics()
     },
 
   methods: {
@@ -28,6 +31,15 @@ export default {
       const currentDate = Date.now()
       const dateString = moment(currentDate).format('YYYY-DD-MM')
       this.currentDate = dateString
+    },
+
+    getCurrentDayPicture() {
+      console.log('hit')
+      this.results.forEach(result => {
+        if (result.date === this.currentDate) {
+          this.currentDatePicture = result
+        }
+      })
     },
 
     getPics() {
