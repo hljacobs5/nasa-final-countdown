@@ -2,7 +2,7 @@
   <main>
     <section class='btn-container'>
       <button v-on:click='getCurrentDayPicture()'>Today's Picture</button>
-      <button v-on:click='getAllPics()'>Get this month's pictures</button>
+      <button v-on:click='getAllPics()'>Get All Month's Pictures</button>
     </section>
     <section class='image-container'>
        <img class='current-picture' v-if='currentDatePicture' :src='this.currentDatePicture.url' />
@@ -47,8 +47,8 @@ export default {
       const currentDate = Date.now()
       const dateString = moment(currentDate).format('YYYY-MM-DD')
       this.currentDate = dateString
-      // const currentMonth = moment(currentDate).format('YYYY-MM')
-      // this.currentMonth = currentMonth + '-01'
+      const currentMonth = moment(currentDate).format('YYYY-MM')
+      this.currentMonth = currentMonth + '-01'
 
     },
 
