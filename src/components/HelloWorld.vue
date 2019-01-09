@@ -1,13 +1,16 @@
 <template>
-  <div>
-     <button v-on:click='getCurrentDayPicture()'>Today's Picture</button>
-     <button v-on:click='getAllPics()'>Get All Pictures</button>
-     <img class='current-picture' :src='this.currentDatePicture.picture' />
-     <div class='pictures'>
-      <img v-if='showAllPictures' v-for='result in results' :value='result.date' :src='result.picture' />
-     </div>
-
-  </div>
+  <main>
+    <section class='btn-container'>
+      <button v-on:click='getCurrentDayPicture()'>Today's Picture</button>
+      <button v-on:click='getAllPics()'>Get All Pictures</button>
+    </section>
+    <section class='image-container'>
+       <img class='current-picture' :src='this.currentDatePicture.picture' />
+       <div class='pictures'>
+        <img class='picture' v-bind:class='{}'v-if='showAllPictures' v-for='result in results' :value='result.date' :src='result.picture' />
+       </div>
+    </section>
+  </main>
 </template>
 
 <script>
@@ -71,8 +74,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .current-picture {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
 
+  button {
+
+  }
+
+  .current-picture {
+    border: none;
+    height: 20rem;
+    width: 20rem;
   }
 
   .pictures {
