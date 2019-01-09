@@ -1,4 +1,4 @@
-export default mockMonthData = {
+export const mockMonthData = [{
 		date: '2019-01-01', 
 		picture: 'https://cdn.spacetelescope.org/archives/images/wallpaper2/heic1509a.jpg'
 	},
@@ -118,4 +118,4 @@ export default mockMonthData = {
 		date: '2019-30-01', 
 		picture: 'https://wallimpex.com/data/out/721/galaxy-wallpaper-1080p-10725536.jpg'
 	}
-}
+]
