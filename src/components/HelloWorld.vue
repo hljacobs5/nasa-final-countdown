@@ -98,6 +98,7 @@ export default {
     margin-bottom: 30px;
     cursor: pointer;
     border-radius: 12px;
+    font-family: 'Coiny';
   }
 
   .current-picture {
@@ -125,5 +126,6 @@ export default {
     display: flex;
     flex-direction: column;
     color: #FFFFFF;
+    font-family: 'Coiny', cursive;
   }
 </style>

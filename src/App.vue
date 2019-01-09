@@ -33,11 +33,16 @@ body {
 h1 {
   color: #FFFFFF;
   font-size: 60px;
+  font-family: 'Coiny';
+  text-shadow: -1px 0 #71298F, 0 1px #71298F, 1px 0 #71298F, 0 -1px #71298F;
+
 }
 
 .description {
   font-size: 30px;
   color: #71298F;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: -1px 0 #3A078D, 0 1px #3A078D, 1px 0 #3A078D, 0 -1px #3A078D;
 
 }
 
