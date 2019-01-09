@@ -47,9 +47,9 @@ export default {
       const currentDate = Date.now()
       const dateString = moment(currentDate).format('YYYY-MM-DD')
       this.currentDate = dateString
-      const currentMonth = moment(currentDate).format('YYYY-MM')
-      this.currentMonth = currentMonth + '-01'
-      console.log(dateString)
+      // const currentMonth = moment(currentDate).format('YYYY-MM')
+      // this.currentMonth = currentMonth + '-01'
+
     },
 
     getCurrentDayPicture() {
