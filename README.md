@@ -6,7 +6,7 @@
 
 ![alt text](https://github.com/hljacobs5/nasa-final-countdown/blob/master/Screen%20Shot%202019-01-09%20at%2010.48.27%20AM.png)
 ![alt text](https://github.com/hljacobs5/nasa-final-countdown/blob/master/Screen%20Shot%202019-01-09%20at%2010.49.12%20AM.png)
-![alt text](https://github.com/hljacobs5/hj-comp-challenge-1/blob/master/template-1.png)
+![alt text](https://github.com/hljacobs5/nasa-final-countdown/blob/master/Screen%20Shot%202019-01-09%20at%2010.49.00%20AM.png)
 ## Build Setup
 
 ``` bash
