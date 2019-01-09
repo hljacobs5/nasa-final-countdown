@@ -1,9 +1,16 @@
 <template>
-  <div>
-
-     <button v-on:click='getPics()'>Click me</button>
-     <div class='results'>{{results}}</div>        
-  </div>
+  <main>
+    <section class='btn-container'>
+      <button v-on:click='getCurrentDayPicture()'>Today's Picture</button>
+      <button v-on:click='getAllPics()'>Get All Pictures</button>
+    </section>
+    <section class='image-container'>
+       <img class='current-picture' :src='this.currentDatePicture.picture' />
+       <div class='pictures'>
+        <img class='picture' v-bind:class='{}'v-if='showAllPictures' v-for='result in results' :value='result.date' :src='result.picture' />
+       </div>
+    </section>
+  </main>
 </template>
 
 <script>
@@ -17,11 +24,14 @@ export default {
     return {
       query: '',
       results: '',
+      currentDatePicture: '',
+      showAllPictures: '',
       currentDate: ''
     }
   },
     mounted() {
       this.getDate()
+      this.getPics()
     },
 
   methods: {
@@ -29,6 +39,20 @@ export default {
       const currentDate = Date.now()
       const dateString = moment(currentDate).format('YYYY-DD-MM')
       this.currentDate = dateString
+    },
+
+    getCurrentDayPicture() {
+      this.showAllPictures = '';
+      this.results.forEach(result => {
+        if (result.date === this.currentDate) {
+          this.currentDatePicture = result
+        }
+      })
+    },
+
+    getAllPics() {
+      this.currentDatePicture = '';
+      this.showAllPictures = this.results;
     },
 
     getPics() {
@@ -42,9 +66,7 @@ export default {
       //     console.log(error)
       //   })
         console.log(mockMonthData, this.currentDate)
-        this.results = mockMonthData.map(day => {
-          day.picture
-        })
+        this.results = mockMonthData
     }
   }
 }
@@ -52,5 +74,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  main {
+    display: flex;
+    flex-direction: column;
+  }
 
+  button {
+
+  }
+
+  .current-picture {
+    border: none;
+    height: 20rem;
+    width: 20rem;
+  }
+
+  .pictures {
+    display: flex;
+    flex-wrap: wrap;
+  }
 </style>
