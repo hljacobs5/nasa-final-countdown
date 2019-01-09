@@ -2,13 +2,17 @@
   <main>
     <section class='btn-container'>
       <button v-on:click='getCurrentDayPicture()'>Today's Picture</button>
-      <button v-on:click='getAllPics()'>Get All Pictures</button>
+      <button v-on:click='getAllPics()'>Get this month's pictures</button>
     </section>
     <section class='image-container'>
-
        <img class='current-picture' v-if='currentDatePicture' :src='this.currentDatePicture.url' />
        <div class='pictures'>
-        <img class='picture' v-bind:class='{}' v-if='showAllPictures' v-for='result in results' :value='result.date' :src='result.url' />
+       <template class='labels' v-for='result in results' v-if='showAllPictures'>
+         <div class='labels'>
+            <img class='picture' v-bind:class='{}' v-if='showAllPictures' :value='result.date' :src='result.url' />
+            <p>{{result.date}}</p>
+          </div>
+        </template>
        </div>
     </section>
   </main>
@@ -32,10 +36,11 @@ export default {
       currentMonth: ''
     }
   },
-    mounted() {
-      this.getDate()
-      this.getPics()
-    },
+  
+  created() {
+    this.getDate()
+    this.getPics()
+  },
 
   methods: {
     getDate() {
@@ -44,6 +49,7 @@ export default {
       this.currentDate = dateString
       const currentMonth = moment(currentDate).format('YYYY-MM')
       this.currentMonth = currentMonth + '-01'
+      console.log(dateString)
     },
 
     getCurrentDayPicture() {
@@ -71,14 +77,13 @@ export default {
       //     console.log(error)
       //   })
 
-      
-
+      this.results = mockMonthData.data;
+      this.currentDayPicture = mockMonthData.data.slice(-1)[0];
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   main {
     display: flex;
@@ -86,11 +91,13 @@ export default {
   }
 
   button {
-    background-color: black;
+    background-color: grey;
     color: white;
     height: 40px;
     font-size: 15px;
     margin-bottom: 30px;
+    border: none;
+    cursor: pointer;
   }
 
   .current-picture {
@@ -109,5 +116,10 @@ export default {
     padding-bottom: 30px;
     height: 20rem;
     width: 25rem;
+  }
+
+  .labels {
+    display: flex;
+     flex-direction: column;
   }
 </style>
